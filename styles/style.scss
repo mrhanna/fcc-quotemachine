@@ -1,0 +1,134 @@
+$palettes: (
+	red: (#922, #a33),
+	blue: (#124, #345),
+	sky: (#83adb5, #8bc),
+	purple: (#5e3c58, #757),
+	green: (#3a6, #5c7),
+	teal: (#008080, #0aa)
+);
+$basic-white: #eee;
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+html, body, #quote-machine {
+	height: 100%;
+  margin: 0;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16pt;
+	background-color: black;
+}
+
+.quote-box-wrapper {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 1s, color 1s;
+
+	#quote-wrapper {
+		transition: opacity .4s;
+
+		&.changing {
+			opacity: 0;
+		}
+	}
+
+	#quote-box {
+		display: block;
+		background-color: $basic-white;
+		width: 100%;
+		max-width: 600px;
+		padding: 2rem 4rem;
+		box-sizing: border-box;
+		@include border-radius(8px);
+
+		blockquote {
+			font-size: 2rem;
+			margin: 1rem 0 0 0;
+			text-align: center;
+
+			.fa.fa-quote-left {
+				margin-right: 0.5rem;
+			}
+		}
+
+		cite {
+			margin-top: .5rem;
+			display: block;
+			text-align: right;
+			font-style: normal;
+			font-size: 1.2rem;
+
+			&:before {
+				content: "\2014";
+				padding-right: 5px;
+			}
+		}
+
+		.buttons {
+			margin: 2rem -4px 0 -4px;
+			text-align:right;
+		}
+
+		a, button {
+			display: inline-block;
+			font-size: 1.2rem;
+			padding: 5px 25px;
+			margin: 4px 4px;
+			border: none;
+			box-sizing: border-box;
+			vertical-align: middle;
+			text-decoration: none;
+			@include border-radius(4px);
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	@each $name, $colors in $palettes {
+		&.color-#{$name} {
+			background-color: nth($colors, 1);
+			color: nth($colors, 1);
+
+			a, button {
+				background-color: nth($colors, 1);
+				color: $basic-white;
+
+				&:hover {
+					background-color: nth($colors, 2);
+				}
+			}
+
+			#quote-select {
+				background-color: nth($colors, 1);
+			}
+		}
+	}
+
+	#quote-select {
+		position: absolute;
+		left: 3px;
+		bottom: 3px;
+
+		padding: 3px 10px;
+		color: $basic-white;
+		border: thin solid $basic-white;
+		@include border-radius(8px);
+
+		transition: background-color 1s;
+	}
+}

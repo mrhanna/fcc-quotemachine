@@ -1,0 +1,141 @@
+html, body, #quote-machine {
+  height: 100%;
+  margin: 0; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16pt;
+  background-color: black; }
+
+.quote-box-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1s, color 1s; }
+  .quote-box-wrapper #quote-wrapper {
+    transition: opacity .4s; }
+    .quote-box-wrapper #quote-wrapper.changing {
+      opacity: 0; }
+  .quote-box-wrapper #quote-box {
+    display: block;
+    background-color: #eee;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px; }
+    .quote-box-wrapper #quote-box blockquote {
+      font-size: 2rem;
+      margin: 1rem 0 0 0;
+      text-align: center; }
+      .quote-box-wrapper #quote-box blockquote .fa.fa-quote-left {
+        margin-right: 0.5rem; }
+    .quote-box-wrapper #quote-box cite {
+      margin-top: .5rem;
+      display: block;
+      text-align: right;
+      font-style: normal;
+      font-size: 1.2rem; }
+      .quote-box-wrapper #quote-box cite:before {
+        content: "\2014";
+        padding-right: 5px; }
+    .quote-box-wrapper #quote-box .buttons {
+      margin: 2rem -4px 0 -4px;
+      text-align: right; }
+    .quote-box-wrapper #quote-box a, .quote-box-wrapper #quote-box button {
+      display: inline-block;
+      font-size: 1.2rem;
+      padding: 5px 25px;
+      margin: 4px 4px;
+      border: none;
+      box-sizing: border-box;
+      vertical-align: middle;
+      text-decoration: none;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px; }
+      .quote-box-wrapper #quote-box a:hover, .quote-box-wrapper #quote-box button:hover {
+        cursor: pointer; }
+  .quote-box-wrapper.color-red {
+    background-color: #922;
+    color: #922; }
+    .quote-box-wrapper.color-red a, .quote-box-wrapper.color-red button {
+      background-color: #922;
+      color: #eee; }
+      .quote-box-wrapper.color-red a:hover, .quote-box-wrapper.color-red button:hover {
+        background-color: #a33; }
+    .quote-box-wrapper.color-red #quote-select {
+      background-color: #922; }
+  .quote-box-wrapper.color-blue {
+    background-color: #124;
+    color: #124; }
+    .quote-box-wrapper.color-blue a, .quote-box-wrapper.color-blue button {
+      background-color: #124;
+      color: #eee; }
+      .quote-box-wrapper.color-blue a:hover, .quote-box-wrapper.color-blue button:hover {
+        background-color: #345; }
+    .quote-box-wrapper.color-blue #quote-select {
+      background-color: #124; }
+  .quote-box-wrapper.color-sky {
+    background-color: #83adb5;
+    color: #83adb5; }
+    .quote-box-wrapper.color-sky a, .quote-box-wrapper.color-sky button {
+      background-color: #83adb5;
+      color: #eee; }
+      .quote-box-wrapper.color-sky a:hover, .quote-box-wrapper.color-sky button:hover {
+        background-color: #8bc; }
+    .quote-box-wrapper.color-sky #quote-select {
+      background-color: #83adb5; }
+  .quote-box-wrapper.color-purple {
+    background-color: #5e3c58;
+    color: #5e3c58; }
+    .quote-box-wrapper.color-purple a, .quote-box-wrapper.color-purple button {
+      background-color: #5e3c58;
+      color: #eee; }
+      .quote-box-wrapper.color-purple a:hover, .quote-box-wrapper.color-purple button:hover {
+        background-color: #757; }
+    .quote-box-wrapper.color-purple #quote-select {
+      background-color: #5e3c58; }
+  .quote-box-wrapper.color-green {
+    background-color: #3a6;
+    color: #3a6; }
+    .quote-box-wrapper.color-green a, .quote-box-wrapper.color-green button {
+      background-color: #3a6;
+      color: #eee; }
+      .quote-box-wrapper.color-green a:hover, .quote-box-wrapper.color-green button:hover {
+        background-color: #5c7; }
+    .quote-box-wrapper.color-green #quote-select {
+      background-color: #3a6; }
+  .quote-box-wrapper.color-teal {
+    background-color: #008080;
+    color: #008080; }
+    .quote-box-wrapper.color-teal a, .quote-box-wrapper.color-teal button {
+      background-color: #008080;
+      color: #eee; }
+      .quote-box-wrapper.color-teal a:hover, .quote-box-wrapper.color-teal button:hover {
+        background-color: #0aa; }
+    .quote-box-wrapper.color-teal #quote-select {
+      background-color: #008080; }
+  .quote-box-wrapper #quote-select {
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    padding: 3px 10px;
+    color: #eee;
+    border: thin solid #eee;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    transition: background-color 1s; }
+
+/*# sourceMappingURL=style.css.map */
